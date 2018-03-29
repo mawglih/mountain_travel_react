@@ -1,8 +1,9 @@
 import React, { Component }  from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Navigation from './navigation';
+import { Switch, Route } from 'react-router-dom';
+import Header from './header';
 import AboutPage from './about';
 import HomePage from './home';
+import ContactPage from './contact';
 import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
 
@@ -21,9 +22,10 @@ class App extends Component {
 
   render() {
     return(
-      <BrowserRouter>
+      
       <div>
-        <Navigation/>
+        <Header/>
+        <Switch>
         <Route
           exact path={routes.HOME}
           component={() => <HomePage />}
@@ -32,8 +34,14 @@ class App extends Component {
           exact path={routes.ABOUT}
           component={() => <AboutPage />}
         />
+        <Route
+          exact path={routes.CONTACT}
+          component={() => <ContactPage />}
+        />
+        <Route path="/" exact component={HomePage} />
+        </Switch>
+        
       </div>
-  </BrowserRouter>
     );
   }
 }

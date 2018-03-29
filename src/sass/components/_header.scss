@@ -1,0 +1,24 @@
+.header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 100px 0;
+    animation: 1s fadein .5s forwards;
+    opacity: 0;
+    color: $color-white;
+    &__title {
+        flex: 1 1 20%;
+        font-family: $font1;
+        font-weight: 400;
+    }
+    &__nav {
+        flex: 1 1 80%;
+    }
+    @keyframes fadein {
+        100% {
+            opacity: 1;
+        }
+    }
+}

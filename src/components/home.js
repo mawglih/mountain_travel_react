@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { db } from '../firebase';
+import Hero from './hero';
 
 
-class HomePage extends Component {
-    render() {
+export default () => {
         return(
             <div>
-                <h1 className="main-title">Home page</h1>
+                <Hero />
             </div>
         );
     }
-}
-
-
-export default HomePage;
